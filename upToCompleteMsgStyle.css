@@ -1,0 +1,178 @@
+/*-----------------
+    VARIABLES
+-------------------*/
+& {
+  /*I just read an email from Kevin Powell who said we can use
+    & instead of :root */
+  --clr-p-light-green: hsl(148, 38%, 91%);
+  --clr-p-green: hsl(169, 82%, 27%);
+  --clr-p-red: hsl(0, 66%, 56%);
+
+  --clr-n-white: hsl(0, 0%, 100%);
+  --clr-n-medium-grey: hsl(186, 15%, 59%);
+  --clr-n-dark-grey: hsl(187, 24%, 22%);
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --br-inputs: 0.3rem;
+  --br-container: 0.8rem;
+}
+
+/*-----------------
+    RESET
+-------------------*/
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/*-----------------
+    GENERAL STYLES
+-------------------*/
+img {
+  max-width: 100%;
+}
+body {
+  display: grid;
+  place-items: center;
+  margin-top: 10rem;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  font-weight: var(--fw-400);
+  background-color: var(--clr-p-light-green);
+  color: var(--clr-n-dark-grey);
+}
+form {
+  background-color: var(--clr-n-white);
+  padding: 1.5rem;
+  border-radius: var(--br-container);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+span {
+  color: var(--clr-p-green);
+  margin-left: 0.3rem;
+}
+input,
+.general-container,
+.support-container {
+  border-radius: var(--br-inputs);
+  border: 1px solid var(--clr-n-medium-grey);
+  height: 2.5rem;
+  margin-block: 0.5rem 1.5rem;
+  width: 100%;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  outline: none;
+}
+.general-container input,
+.support-container input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 1rem 0 0;
+}
+.general-container,
+.support-container {
+  display: flex;
+  align-items: center;
+}
+
+.error-text,
+.consent-error-text {
+  font-size: 0.8rem;
+  color: var(--clr-p-red);
+  margin-block: -1.2rem 1.5rem;
+  display: none;
+}
+.message-container .error-text {
+  margin-top: 0.2rem;
+}
+.consent-container {
+  display: flex;
+  align-items: center;
+  margin-block: 2rem;
+}
+/*accent-color was a new one for me*/
+.consent-container input[type="checkbox"]:checked {
+  accent-color: var(--clr-p-green);
+}
+input[type="radio"] {
+  accent-color: var(--clr-p-green);
+}
+
+textarea {
+  border-radius: var(--br-inputs);
+  margin-top: 0.5rem;
+  border: 1px solid var(--clr-n-medium-grey);
+  outline: none;
+  padding-left: 1.5rem;
+}
+.consent-container input {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 1rem 0;
+  text-align: left;
+  margin: 0 1rem 0 0;
+}
+.consent-container p {
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--clr-p-green);
+  color: var(--clr-n-white);
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--br-inputs);
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.5;
+}
+.success-msg {
+  background-color: var(--clr-p-green);
+  color: var(--clr-n-white);
+  padding: 1rem;
+  border-radius: var(--br-container);
+  margin: -8rem auto 0 auto;
+  width: 80%;
+  display: none;
+}
+.active {
+  display: block;
+}
+
+.success-header {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+/*!-----------------------
+ /*!   MEDIA QUERY 568px
+/*!----------------------*/
+@media (min-width: 568px) {
+  body {
+    max-width: 1200px; /*this is stopping at 630px ??*/
+  }
+  .name-container,
+  .query-inputs {
+    display: flex;
+    gap: 0.8rem;
+  }
+  .general-query,
+  .support-query {
+    width: 100%;
+  }
+  .success-msg {
+    width: 70%;
+  }
+}
